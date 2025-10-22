@@ -10,12 +10,14 @@ Pod::Spec.new do |s|
   s.license      = package["license"]
   s.authors      = package["author"]
 
-  s.platforms    = { :ios => min_ios_version_supported }
+  s.platforms    = { :ios => min_ios_version_supported, :osx => '12.0' }
   s.source       = { :git => "https://github.com/callstack/liquid-glass.git", :tag => "#{s.version}" }
 
-  s.source_files = "ios/**/*.{h,m,mm,cpp,swift}"
-  s.private_header_files = "ios/**/*.h"
+  s.ios.source_files = "ios/**/*.{h,m,mm,cpp,swift}"
+  s.ios.private_header_files = "ios/**/*.h"
 
+  s.osx.source_files = "macos/**/*.{h,m,mm,cpp,swift}"
+  s.osx.private_header_files = "macos/**/*.h"
 
   install_modules_dependencies(s)
 end
