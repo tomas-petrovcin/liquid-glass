@@ -2,8 +2,8 @@ import {
   codegenNativeComponent,
   type ViewProps,
   type ColorValue,
-  type CodegenTypes,
 } from 'react-native';
+import type { WithDefault } from 'react-native/Libraries/Types/CodegenTypesNamespace';
 
 export interface NativeProps extends ViewProps {
   /**
@@ -19,7 +19,7 @@ export interface NativeProps extends ViewProps {
    *
    * Defaults to 'regular'.
    */
-  effect?: CodegenTypes.WithDefault<'clear' | 'regular' | 'none', 'regular'>;
+  effect?: WithDefault<'clear' | 'regular' | 'none', 'regular'>;
   /**
    * The color of the glass effect.
    *
@@ -32,7 +32,7 @@ export interface NativeProps extends ViewProps {
    *
    * Defaults to 'system'.
    */
-  colorScheme?: CodegenTypes.WithDefault<'light' | 'dark' | 'system', 'system'>;
+  colorScheme?: WithDefault<'light' | 'dark' | 'system', 'system'>;
 }
 
 export default codegenNativeComponent<NativeProps>('LiquidGlassView');

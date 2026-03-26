@@ -8,6 +8,4 @@ export interface Spec extends TurboModule {
   getConstants(): LiquidGlassModuleConstants;
 }
 
-export default TurboModuleRegistry.getEnforcing<Spec>(
-  'NativeLiquidGlassModule'
-);
+export default TurboModuleRegistry.get<Spec>('NativeLiquidGlassModule');

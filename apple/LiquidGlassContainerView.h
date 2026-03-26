@@ -1,5 +1,10 @@
 #import <React/RCTViewComponentView.h>
+
+#if TARGET_OS_OSX
+#import <AppKit/AppKit.h>
+#else
 #import <UIKit/UIKit.h>
+#endif
 
 #ifndef LiquidGlassContainerViewNativeComponent_h
 #define LiquidGlassContainerViewNativeComponent_h
